@@ -20,6 +20,35 @@ Output: -1
 Explanation:
 There is no index that satisfies the conditions in the problem statement.
 """
+# size of the array?
+# edge cases?
+# output? integer
 def pivot_index(nums):
-    # Your code here
+    beforeTally = 0
+    afterTally = 0
+    
+    for data in nums:
+        currentIndex = nums.index(data)
+        beforeList = nums[:(currentIndex)]
+        # print(beforeList)
+        
+        afterList = nums[(currentIndex + 1):]
+        # print(afterList)
+        
+    for info in beforeList:
+        beforeTally = beforeTally + info
+    
+    print(beforeTally)
+        
+    for those in afterList:
+        afterTally = afterTally + those
+    print(afterTally)
+        
+    if beforeTally == afterTally:
+        return currentIndex
+    else:
+        return -1
+        
 
+
+print(pivot_index([1,7,3,6,5,6]))
